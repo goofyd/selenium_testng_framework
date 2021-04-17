@@ -1,0 +1,31 @@
+{
+  "appName": "Google",
+  "appURL": "https://google.com",
+  "pages": [
+    {
+      "pageName": "home",
+      "elements": [
+        {
+          "identifier": "txtSearch",
+          "locator": "name",
+          "value": "q"
+        }
+      ]
+    },
+    {
+      "pageName": "search",
+      "elements": [
+        {
+          "identifier": "lnkResults",
+          "locator": "xpath",
+          "value": "//h2[contains(text(), 'Web results')]//parent::div//parent::div//a[not(@id) and not(@class)]"
+        },
+        {
+          "identifier": "lnkResults2",
+          "locator": "xpath",
+          "value": "//h2[contains(text(), 'Web results')]//parent::div//parent::div//a[not(@id) and not(@class)]"
+        }
+      ]
+    }
+  ]
+}
