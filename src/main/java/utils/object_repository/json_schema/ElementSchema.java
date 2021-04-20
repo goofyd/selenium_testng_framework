@@ -1,14 +1,14 @@
-package utils.object_repository.schema;
+package utils.object_repository.json_schema;
 
-public class Element {
+public class ElementSchema {
 
     private String identifier;
     private String locator;
     private String value;
 
-    public Element() { }
+    public ElementSchema() { }
 
-    public Element(String identifier, String locator, String value) {
+    public ElementSchema(String identifier, String locator, String value) {
         this.identifier = identifier;
         this.locator = locator;
         this.value = value;
@@ -27,23 +27,11 @@ public class Element {
         return identifier;
     }
 
-    public void setIdentifier(String identifier) {
-        this.identifier = identifier;
-    }
-
     public String getLocator() {
         return locator;
     }
 
-    public void setLocator(String locator) {
-        this.locator = locator;
-    }
-
     public String getValue() {
         return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
     }
 }

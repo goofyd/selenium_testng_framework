@@ -1,15 +1,15 @@
-package utils.object_repository.schema;
+package utils.object_repository.json_schema;
 
 import java.util.List;
 
-public class Page {
+public class PageSchema {
 
     private String pageName;
-    private List<Element> elements;
+    private List<ElementSchema> elements;
 
-    public Page(){ }
+    public PageSchema(){ }
 
-    public Page(String pageName, List<Element> elements){
+    public PageSchema(String pageName, List<ElementSchema> elements){
         this.pageName = pageName;
         this.elements = elements;
     }
@@ -26,15 +26,7 @@ public class Page {
         return pageName;
     }
 
-    public void setPageName(String pageName) {
-        this.pageName = pageName;
-    }
-
-    public List<Element> getElements() {
+    public List<ElementSchema> getElements() {
         return elements;
-    }
-
-    public void setElements(List<Element> elements) {
-        this.elements = elements;
     }
 }

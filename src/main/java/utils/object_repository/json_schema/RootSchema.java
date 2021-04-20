@@ -1,16 +1,16 @@
-package utils.object_repository.schema;
+package utils.object_repository.json_schema;
 
 import java.util.List;
 
-public class Root {
+public class RootSchema {
 
     private String appName;
     private String appURL;
-    private List<Page> pages;
+    private List<PageSchema> pages;
 
-    public Root(){ }
+    public RootSchema(){ }
 
-    public Root(String appName, String appURL, List<Page> pages){
+    public RootSchema(String appName, String appURL, List<PageSchema> pages){
         this.appName = appName;
         this.appURL = appURL;
         this.pages = pages;
@@ -29,23 +29,11 @@ public class Root {
         return appName;
     }
 
-    public void setAppName(String appName) {
-        this.appName = appName;
-    }
-
     public String getAppURL() {
         return appURL;
     }
 
-    public void setAppURL(String appURL) {
-        this.appURL = appURL;
-    }
-
-    public List<Page> getPages() {
+    public List<PageSchema> getPages() {
         return pages;
-    }
-
-    public void setPages(List<Page> pages) {
-        this.pages = pages;
     }
 }
