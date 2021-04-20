@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
@@ -92,9 +93,13 @@ public class JSONRepository implements ObjectRepository {
 
         @Override
         public PageSchema get(String pageName) {
-            return root.getPages().stream()
+            List<PageSchema> page = root.getPages().stream()
                     .filter(x->x.getPageName().equalsIgnoreCase(pageName))
-                    .collect(Collectors.toList()).get(0);
+                    .collect(Collectors.toList());
+            if(page.isEmpty()){
+                throw new IllegalArgumentException("The Page Name " + pageName + " doesn't Exist!");
+            }
+            return page.get(0);
         }
 
         @Override
@@ -111,11 +116,14 @@ public class JSONRepository implements ObjectRepository {
 
         @Override
         public ElementSchema get(String elementName) {
-            return page.getElements()
+            List<ElementSchema> element = page.getElements()
                     .stream()
                     .filter(x->x.getIdentifier().equalsIgnoreCase(elementName))
-                    .collect(Collectors.toList())
-                    .get(0);
+                    .collect(Collectors.toList());
+            if(element.isEmpty()){
+                throw new IllegalArgumentException("The Element Name " + elementName + " doesn't Exist!");
+            }
+            return element.get(0);
         }
     }
 }
