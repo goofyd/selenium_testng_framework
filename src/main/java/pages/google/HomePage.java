@@ -1,5 +1,7 @@
 package pages.google;
 
-public class HomePage {
+import base.TestRunner;
+
+public class HomePage extends TestRunner {
 
 }
