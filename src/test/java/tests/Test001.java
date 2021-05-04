@@ -18,6 +18,7 @@ public class Test001 extends TestRunner {
         Log.info(searchText);
         homePage.getResultText().forEach(Log::info);
         homePage.getTabs().forEach(Log::info);
+        Log.info(homePage.getFooterContent());
     }
 
 }

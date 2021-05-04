@@ -97,7 +97,7 @@ public class JSONRepository implements ObjectRepository {
                     .filter(x->x.getPageName().equalsIgnoreCase(pageName))
                     .collect(Collectors.toList());
             if(page.isEmpty()){
-                throw new IllegalArgumentException("The Page Name " + pageName + " doesn't Exist!");
+                throw new IllegalArgumentException("The Page Name " + pageName + " doesn't Exist in the JSON Repository!");
             }
             return page.get(0);
         }
@@ -121,7 +121,7 @@ public class JSONRepository implements ObjectRepository {
                     .filter(x->x.getIdentifier().equalsIgnoreCase(elementName))
                     .collect(Collectors.toList());
             if(element.isEmpty()){
-                throw new IllegalArgumentException("The Element Name " + elementName + " doesn't Exist!");
+                throw new IllegalArgumentException("The Element Identifier " + elementName + " doesn't Exist under the Page "+page.getPageName()+" in the JSOn Repository!");
             }
             return element.get(0);
         }

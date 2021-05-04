@@ -50,7 +50,8 @@ public class ApplicationPropManager {
 
     private static JSONRepository getJsonRepo() {
         Log.info("Initializing Object Repository");
-        System.setProperty("obj.repo.name", appProperties.getProperty("repo.name").trim());
+        if(appProperties.containsKey("repo.name"))
+            System.setProperty("obj.repo.name", appProperties.getProperty("repo.name").trim());
         Log.info("Initialized the Object Repository Successfully");
         try{
             return new JSONRepository();

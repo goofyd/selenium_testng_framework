@@ -24,6 +24,11 @@
           "identifier": "lnkTabs",
           "locator": "css",
           "value": "div.hdtb-mitem a"
+        },
+        {
+          "identifier": "divFooterContent",
+          "locator": "xpath",
+          "value": "//div[@role='contentinfo']//span[contains(text(), '%s')]"
         }
       ]
     }
