@@ -19,11 +19,6 @@
           "identifier": "lnkResults",
           "locator": "xpath",
           "value": "//h2[contains(text(), 'Web results')]//parent::div//parent::div//a[not(@id) and not(@class)]"
-        },
-        {
-          "identifier": "lnkResults2",
-          "locator": "xpath",
-          "value": "//h2[contains(text(), 'Web results')]//parent::div//parent::div//a[not(@id) and not(@class)]"
         }
       ]
     }
