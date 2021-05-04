@@ -36,6 +36,8 @@ public class ObjectRepositoryAnnotation extends Annotations {
 
         if(elementSchema.getLocator().equalsIgnoreCase("name")){
             locateBy = By.name(elementSchema.getValue());
+        }else if(elementSchema.getLocator().equalsIgnoreCase("css")){
+            locateBy = By.cssSelector(elementSchema.getValue());
         }else{
             locateBy = By.xpath(elementSchema.getValue());
         }

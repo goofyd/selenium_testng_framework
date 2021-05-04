@@ -16,6 +16,8 @@ public class Test001 extends TestRunner {
         homePage.searchText();
         String searchText = homePage.getSearchBoxText();
         Log.info(searchText);
+        homePage.getResultText().forEach(Log::info);
+        homePage.getTabs().forEach(Log::info);
     }
 
 }
