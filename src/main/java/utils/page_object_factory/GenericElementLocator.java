@@ -1,5 +1,6 @@
 package utils.page_object_factory;
 
+import lombok.AllArgsConstructor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.pagefactory.Annotations;
@@ -7,14 +8,10 @@ import org.openqa.selenium.support.pagefactory.ElementLocator;
 
 import java.util.List;
 
+@AllArgsConstructor
 public class GenericElementLocator implements ElementLocator {
     private final SearchContext context;
     private final Annotations annotation;
-
-    public GenericElementLocator(SearchContext context, Annotations annotation){
-        this.context = context;
-        this.annotation = annotation;
-    }
 
     @Override
     public WebElement findElement() {

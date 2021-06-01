@@ -2,6 +2,9 @@ package utils.object_repository;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import utils.logger.Log;
 import utils.object_repository.json_schema.ElementSchema;
 import utils.object_repository.json_schema.PageSchema;
@@ -68,16 +71,9 @@ public class JSONRepository implements ObjectRepository {
         return new JSONRepository.ObjectRepositoryRoot(root);
     }
 
+    @AllArgsConstructor(access = AccessLevel.PROTECTED)
     protected class ObjectRepositoryRoot implements Root{
-        private final RootSchema root;
-        protected ObjectRepositoryRoot(RootSchema root){
-            this.root = root;
-        }
-
-        @Override
-        public RootSchema getRoot() {
-            return this.root;
-        }
+        private final @Getter RootSchema root;
 
         @Override
         public Page page() {
@@ -85,11 +81,9 @@ public class JSONRepository implements ObjectRepository {
         }
     }
 
+    @AllArgsConstructor(access = AccessLevel.PROTECTED)
     protected class ObjectRepositoryPage implements Page{
-        private final RootSchema root;
-        protected ObjectRepositoryPage(RootSchema root){
-            this.root = root;
-        }
+        private final @Getter RootSchema root;
 
         @Override
         public PageSchema get(String pageName) {
@@ -108,11 +102,9 @@ public class JSONRepository implements ObjectRepository {
         }
     }
 
+    @AllArgsConstructor(access = AccessLevel.PROTECTED)
     protected class ObjectRepositoryElement implements Element{
-        private final PageSchema page;
-        protected ObjectRepositoryElement(PageSchema page){
-            this.page = page;
-        }
+        private final @Getter PageSchema page;
 
         @Override
         public ElementSchema get(String elementName) {

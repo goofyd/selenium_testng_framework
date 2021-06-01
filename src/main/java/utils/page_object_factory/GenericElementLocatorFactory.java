@@ -1,5 +1,6 @@
 package utils.page_object_factory;
 
+import lombok.AllArgsConstructor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.support.pagefactory.Annotations;
 import org.openqa.selenium.support.pagefactory.DefaultElementLocator;
@@ -12,13 +13,10 @@ import utils.page_object_factory.annotations.DynamicElementAnnotation;
 
 import java.lang.reflect.Field;
 
+@AllArgsConstructor
 public class GenericElementLocatorFactory implements ElementLocatorFactory {
 
     private final SearchContext context;
-
-    public GenericElementLocatorFactory(SearchContext context){
-        this.context = context;
-    }
 
     @Override
     public ElementLocator createLocator(Field field) {

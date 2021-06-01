@@ -3,7 +3,6 @@ package base;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import utils.manager.webdriver.WebDriverFactory;
-import utils.object_repository.*;
 
 public class TestRunner {
 

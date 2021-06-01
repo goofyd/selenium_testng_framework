@@ -1,32 +1,16 @@
 package utils.object_repository.json_schema;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import java.util.List;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class PageSchema {
-
-    private String pageName;
-    private List<ElementSchema> elements;
-
-    public PageSchema(){ }
-
-    public PageSchema(String pageName, List<ElementSchema> elements){
-        this.pageName = pageName;
-        this.elements = elements;
-    }
-
-    @Override
-    public String toString() {
-        return "Page{" +
-                "pageName='" + pageName + '\'' +
-                ", elements=" + elements +
-                '}';
-    }
-
-    public String getPageName() {
-        return pageName;
-    }
-
-    public List<ElementSchema> getElements() {
-        return elements;
-    }
+    private @Getter String pageName;
+    private @Getter List<ElementSchema> elements;
 }
