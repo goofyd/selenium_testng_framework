@@ -1,4 +1,4 @@
-package utils.object_repository.page_object_factory;
+package utils.page_object_factory.annotations;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.pagefactory.Annotations;

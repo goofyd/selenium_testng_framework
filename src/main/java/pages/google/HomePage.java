@@ -4,7 +4,7 @@ import base.TestRunner;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import utils.object_repository.page_object_factory.JsonRepo;
+import utils.page_object_factory.annotations.JsonRepo;
 import utils.page_object_factory.GenericPageFactory;
 import utils.page_object_factory.annotations.DynamicElement;
 

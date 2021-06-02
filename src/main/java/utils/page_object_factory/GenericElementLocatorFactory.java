@@ -6,8 +6,8 @@ import org.openqa.selenium.support.pagefactory.Annotations;
 import org.openqa.selenium.support.pagefactory.DefaultElementLocator;
 import org.openqa.selenium.support.pagefactory.ElementLocator;
 import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
-import utils.object_repository.page_object_factory.JsonRepo;
-import utils.object_repository.page_object_factory.JsonRepoAnnotation;
+import utils.page_object_factory.annotations.JsonRepo;
+import utils.page_object_factory.annotations.JsonRepoAnnotation;
 import utils.page_object_factory.annotations.DynamicElement;
 import utils.page_object_factory.annotations.DynamicElementAnnotation;
 

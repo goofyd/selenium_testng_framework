@@ -1,4 +1,4 @@
-package utils.object_repository.page_object_factory;
+package utils.page_object_factory.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
