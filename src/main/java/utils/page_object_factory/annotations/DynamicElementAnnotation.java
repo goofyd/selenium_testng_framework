@@ -1,5 +1,7 @@
 package utils.page_object_factory.annotations;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.pagefactory.Annotations;
 import utils.manager.ApplicationPropManager;
@@ -12,6 +14,7 @@ import java.util.Arrays;
 public class DynamicElementAnnotation extends Annotations {
     private final Field field;
     private final JSONRepository jsRepo;
+    protected Logger logger = LogManager.getLogger(this.getClass());
 
     public DynamicElementAnnotation(Field field){
         super(field);
@@ -34,6 +37,7 @@ public class DynamicElementAnnotation extends Annotations {
                         jsRepo.root().page().get(repo.page())
                 ).get(repo.element());
 
+        logger.info("Found Element " + elementSchema);
         Object[] params = Arrays.copyOf(repo.params(), repo.params().length, Object[].class);
         String locatorValue = String.format(elementSchema.getValue(), params);
         if(elementSchema.getLocator().equalsIgnoreCase("name")){

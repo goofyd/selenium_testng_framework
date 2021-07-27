@@ -5,7 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import utils.logger.Log;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import utils.object_repository.json_schema.ElementSchema;
 import utils.object_repository.json_schema.PageSchema;
 import utils.object_repository.json_schema.RootSchema;
@@ -23,6 +24,7 @@ public class JSONRepository implements ObjectRepository {
     private final RootSchema root;
     private String objRepoJsonFileName;
     private static final String DEFAULT_FILE_NAME = "objRepository.json";
+    protected Logger logger = LogManager.getLogger(this.getClass());
 
     public JSONRepository() throws FileNotFoundException {
         init();
@@ -33,11 +35,11 @@ public class JSONRepository implements ObjectRepository {
         String propertyFileName = System.getProperty("obj.repo.name");
         String tempFileName = (propertyFileName == null)? DEFAULT_FILE_NAME : propertyFileName;
         if(propertyFileName==null)
-            Log.warn("No System Property for 'obj.repo.name' set. Using the default file name '" + DEFAULT_FILE_NAME + "' under resource folder");
+            logger.warn("No System Property for 'obj.repo.name' set. Using the default file name '" + DEFAULT_FILE_NAME + "' under resource folder");
         try{
             setJSONFile(Objects.requireNonNull(JSONRepository.class.getClassLoader().getResource(tempFileName)).getPath().substring(1));
         }catch(Exception e){
-            Log.error(e.toString());
+            logger.error(e.toString());
             throw new FileNotFoundException("The File Name " + tempFileName + " doesn't exist in the resource folder!" );
         }
     }

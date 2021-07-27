@@ -1,6 +1,6 @@
 package pages.google;
 
-import base.TestRunner;
+import base.Base;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-public class HomePage extends TestRunner {
+public class HomePage extends Base {
 
     @JsonRepo(page = "home", element = "txtSearch")
     private WebElement searchBox;

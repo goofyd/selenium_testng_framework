@@ -1,24 +1,23 @@
 package tests;
 
-import base.TestRunner;
+import base.Base;
 import org.testng.annotations.Test;
 import pages.google.HomePage;
-import utils.logger.Log;
 import utils.manager.webdriver.WebDriverFactory;
 
-public class Test001 extends TestRunner {
+public class Test001 extends Base {
 
     @Test
     public void test_001(){
-        Log.info("Test 1");
+        logger.info("Test 1");
         HomePage homePage = new HomePage(WebDriverFactory.getInstance().getDriver());
         homePage.setSearchBox("hello");
         homePage.searchText();
         String searchText = homePage.getSearchBoxText();
-        Log.info(searchText);
-        homePage.getResultText().forEach(Log::info);
-        homePage.getTabs().forEach(Log::info);
-        Log.info(homePage.getFooterContent());
+        logger.info(searchText);
+        homePage.getResultText().forEach(logger::info);
+        homePage.getTabs().forEach(logger::info);
+        logger.info(homePage.getFooterContent());
     }
 
 }
